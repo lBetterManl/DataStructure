@@ -2,6 +2,8 @@ package com.set.demo;
 
 /**
  * Created by Hanson on 2017/6/7.
+ *
+ * 链式集合
  */
 
 class Node {
@@ -10,6 +12,7 @@ class Node {
 
     public Node(Object data) {
         this.data = data;
+        this.next = null;
     }
 
     public Node() {
@@ -66,7 +69,7 @@ public class LinkSet implements Set {
 
     @Override
     public void add(Object o) {
-        Node p;
+        Node p = null;
         if (0 == size) {
             p = head;
         } else {
@@ -78,7 +81,8 @@ public class LinkSet implements Set {
 
     @Override
     public Object get(int i) {
-        return index(i).data;
+        Node p = index(i);
+        return p.data;
     }
 
     @Override
@@ -130,22 +134,55 @@ public class LinkSet implements Set {
     @Override
     public Set unionSet(Set set) {
         Set unSet = new LinkSet();
-
-        return null;
+        for (int i = 0; i < size; i++) {
+            unSet.add(set.get(i));
+        }
+        for (int i = 0; i < set.size(); i++) {
+            Object obj = set.get(i);
+            if (!contain(obj)) {
+                unSet.add(obj);
+            }
+        }
+        return unSet;
     }
 
     @Override
     public Set intersectionSet(Set set) {
-        return null;
+        Set inSet = new LinkSet();
+        for (int i = 0; i < size; i++) {
+            Object obj = set.get(i);
+            if (contain(obj))
+                inSet.add(obj);
+        }
+        return inSet;
     }
 
     @Override
     public Set differenceSet(Set set) {
-        return null;
+        Set difSet = new LinkSet();
+        for (int i = 0; i < size; i++) {
+            if (!set.contain(get(i)))
+                difSet.add(get(i));
+        }
+        return difSet;
     }
 
     @Override
     public boolean isEmpty() {
         return 0 == size;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        for(int i=0; i<size; i++) {
+            if(i == size-1)
+                sb.append(get(i));
+            else
+                sb.append(get(i) + ", ");
+        }
+        sb.append("}");
+        return sb.toString();
     }
 }

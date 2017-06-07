@@ -11,6 +11,7 @@ public class LinkListTest {
 
     @Test
     public void testAdd() {
+        link.add("赖赖");
         System.out.println(link.get(0));
         link.remove(0);
         System.out.println(link.get(0));
