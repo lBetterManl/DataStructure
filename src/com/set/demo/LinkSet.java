@@ -135,7 +135,7 @@ public class LinkSet implements Set {
     public Set unionSet(Set set) {
         Set unSet = new LinkSet();
         for (int i = 0; i < size; i++) {
-            unSet.add(set.get(i));
+            unSet.add(get(i));
         }
         for (int i = 0; i < set.size(); i++) {
             Object obj = set.get(i);
@@ -150,7 +150,7 @@ public class LinkSet implements Set {
     public Set intersectionSet(Set set) {
         Set inSet = new LinkSet();
         for (int i = 0; i < size; i++) {
-            Object obj = set.get(i);
+            Object obj = get(i);
             if (contain(obj))
                 inSet.add(obj);
         }
