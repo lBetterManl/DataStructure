@@ -151,7 +151,7 @@ public class LinkSet implements Set {
         Set inSet = new LinkSet();
         for (int i = 0; i < size; i++) {
             Object obj = get(i);
-            if (contain(obj))
+            if (set.contain(obj))
                 inSet.add(obj);
         }
         return inSet;
