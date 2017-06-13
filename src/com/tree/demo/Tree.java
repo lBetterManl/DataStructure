@@ -1,6 +1,7 @@
 package com.tree.demo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -50,5 +51,139 @@ public class Tree {
         this.data = data;
         childs = new ArrayList<>();
         childs.clear();
+    }
+
+    /**
+     * 添加子树
+     * @param tree
+     */
+    public void addNode(Tree tree){
+        childs.add(tree);
+    }
+
+    /**
+     * 置空树
+     */
+    public void clear(){
+        data = null;
+        childs.clear();
+    }
+
+    /**
+     * 返回第i个子树
+     * @param i
+     * @return 子树
+     */
+    public Tree getChild(int i){
+        return childs.get(i);
+    }
+
+    /**
+     * 求第一个孩子 节点
+     * @return
+     */
+    public Tree getFirstChild(){
+        return childs.get(0);
+    }
+
+    /**
+     * 求最后一个孩子节点
+     * @return
+     */
+    public Tree getLastChild(){
+        return childs.get(childs.size()-1);
+    }
+
+    /**
+     * 得到所有孩子节点
+     * @return
+     */
+    public List<Tree> getChilds(){
+        return childs;
+    }
+
+    /**
+     * 得到根节点数据
+     * @return
+     */
+    public Object getRootData(){
+        return data;
+    }
+
+    /**
+     * 判断是否为空树
+     * @return
+     */
+    public boolean isEmpty(){
+        if (childs.isEmpty() && data == null)
+            return true;
+        return false;
+    }
+
+    /**
+     * 是否为叶子节点
+     * @return
+     */
+    public boolean isLeaf(){
+        if (childs.isEmpty())
+            return true;
+        return false;
+    }
+
+    /**
+     * 获得树根
+     * @return
+     */
+    public Tree root(){
+        return this;
+    }
+
+    /**
+     * 设置根节点数据
+     * @param data
+     */
+    public void setRootData(Object data){
+        this.data = data;
+    }
+
+    /**
+     * 节点个数
+     * @return
+     */
+    public int size(){
+        if(this.isEmpty()){
+            return 0;
+        }else if(this.isLeaf()){
+            return 1;
+        } else {
+            int count = 1;
+            int n = childs.size();
+            for (int i = 0; i < n; i++) {
+                if (!childs.get(i).isEmpty()){
+                    count += childs.get(i).size();
+                }
+            }
+            return count;
+        }
+    }
+
+    public int dept(){
+        if(this.isEmpty()){
+            return 0;
+        } else if(this.isLeaf()){
+            return 1;
+        } else {
+            int n = childs.size();
+            int[] a = new int[n];
+            for(int i=0; i<n; i++) {
+                if(childs.get(i).isEmpty()) {
+                    a[i] = 0+1;
+                } else {
+                    a[i] = childs.get(i).dept() + 1;
+                }
+            }
+            Arrays.sort(a);
+            return a[n-1];
+        }
     }
 }
