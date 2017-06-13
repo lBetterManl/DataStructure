@@ -5,7 +5,7 @@ package com.stack.demo;
  */
 
 /**
- * 链式(堆)栈的结点
+ * 链式(堆)栈的节点
  */
 class Node {
     Object data;    //数据元素
@@ -76,18 +76,19 @@ public class LinkStack implements Stack {
 
     /**
      * 从栈顶输出
+     *
      * @return 栈字符串
      */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("[");
         Node p = top;
-        if(p == null) {
+        if (p == null) {
             sb.append("");
         } else {
-            do{
+            do {
                 sb.append(p.data + ",  ");
-            }while((p = p.next) != null);
+            } while ((p = p.next) != null);
         }
         sb.append("]");
         return sb.toString();

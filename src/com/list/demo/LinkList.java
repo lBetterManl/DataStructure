@@ -130,12 +130,12 @@ public class LinkList implements List {
 
     @Override
     public void remove(int i) {
-        if (i>=0 && i<size){
+        if (i >= 0 && i < size) {
             Node p = null;
-            if (i==0){
+            if (i == 0) {
                 p = head;
             } else {
-                p = index(i-1);
+                p = index(i - 1);
             }
             p.next = index(i).next;
         }

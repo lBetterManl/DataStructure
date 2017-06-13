@@ -2,7 +2,7 @@ package com.string.demo;
 
 /**
  * Created by Hanson on 2017/6/7.
- *
+ * <p>
  * 串值不可变字符串，操作后字符串不改变
  */
 public class ArrayDisStr implements Str {
@@ -104,24 +104,24 @@ public class ArrayDisStr implements Str {
 
     @Override
     public Str insert(int pos, Str str) {
-        if(pos < 0 || pos > len)
+        if (pos < 0 || pos > len)
             throw new StringIndexOutOfBoundsException(pos);
-        else if(pos != 0) {
+        else if (pos != 0) {
             Str s1 = this.substring(0, pos);
             Str s2 = this.substring(pos);
             Str res1 = s1.concat(str);
             Str res2 = res1.concat(s2);
             return res2;
-        }else {
+        } else {
             return str.concat(this);
         }
     }
 
     @Override
     public Str delete(int begin, int end) {
-        if(begin < 0 || begin > end || end > len)
+        if (begin < 0 || begin > end || end > len)
             throw new StringIndexOutOfBoundsException();
-        else if(begin == 0 && end == len)
+        else if (begin == 0 && end == len)
             return new ArrayDisStr();
         else {
             Str s1 = this.substring(0, begin);
@@ -141,12 +141,12 @@ public class ArrayDisStr implements Str {
         tLen = target.length();
         rLen = replacement.length();
         Str strx = new ArrayDisStr(s);
-        while(k<len) {
+        while (k < len) {
             pos = this.indexOf(target, k);
-            if(pos == -1)
+            if (pos == -1)
                 break;
             else {
-                strx = strx.delete(pos, pos+ tLen);
+                strx = strx.delete(pos, pos + tLen);
                 strx = strx.insert(pos, replacement);
                 k = pos + rLen;
             }
@@ -157,14 +157,14 @@ public class ArrayDisStr implements Str {
     @Override
     public Str concat(Str str) {
         int sLen = str.length();
-        if(sLen == 0)
+        if (sLen == 0)
             return this;
-        char buf[] = new char[len+sLen];
-        for(int i=0; i<len; i++) {
+        char buf[] = new char[len + sLen];
+        for (int i = 0; i < len; i++) {
             buf[i] = s[i];
         }
-        for(int i=0; i<sLen; i++) {
-            buf[len+i] = str.charAt(i);
+        for (int i = 0; i < sLen; i++) {
+            buf[len + i] = str.charAt(i);
         }
         return new ArrayDisStr(buf);
     }
@@ -189,19 +189,20 @@ public class ArrayDisStr implements Str {
 
     /**
      * 判断串相同
+     *
      * @param o
      * @return 0为相同
      */
     @Override
     public int compareTo(Object o) {
-        Str str2 = (Str)o;
+        Str str2 = (Str) o;
         int n = Math.min(len, str2.length());
         int i = 0;
-        while(i<n){
+        while (i < n) {
             char c1 = s[i];
             char c2 = str2.charAt(i);
             if (c1 != c2) {
-                return c1-c2;
+                return c1 - c2;
             }
             i++;
         }

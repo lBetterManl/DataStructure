@@ -70,6 +70,7 @@ public class ArrayStack implements Stack {
 
     /**
      * 从栈顶开始输出
+     *
      * @return 栈字符串
      */
     @Override

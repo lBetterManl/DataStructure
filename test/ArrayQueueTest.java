@@ -2,7 +2,7 @@ import com.queue.demo.ArrayQueue;
 
 /**
  * Created by Hanson on 2017/6/6.
- *
+ * <p>
  * 测试-》count刚好为DEFAULT_SIZE整数倍时，队尾指向队首即rear=0
  */
 public class ArrayQueueTest {

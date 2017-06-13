@@ -186,8 +186,8 @@ public class ArraySet implements Set {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        for(int i=0; i<size; i++) {
-            if(i == size-1)
+        for (int i = 0; i < size; i++) {
+            if (i == size - 1)
                 sb.append(datas[i]);
             else
                 sb.append(datas[i] + ", ");

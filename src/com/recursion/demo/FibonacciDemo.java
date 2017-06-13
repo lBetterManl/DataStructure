@@ -13,14 +13,15 @@ public class FibonacciDemo {
 
     /**
      * 斐波纳契数列
+     *
      * @param n 数例中第n个
      * @return 第n个数
      */
     public static long fibonacci(int n) {
-        if((0==n) || (1==n))
+        if ((0 == n) || (1 == n))
             return n;
         else
-            return fibonacci(n-1)+fibonacci(n-2);
+            return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
 }

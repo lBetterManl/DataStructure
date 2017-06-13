@@ -5,6 +5,6 @@ import com.recursion.demo.HanioDemo;
  */
 public class HanoDemoTest {
     public static void main(String[] args) {
-        System.out.println(HanioDemo.hanio(1,"A","B", "C"));
+        System.out.println(HanioDemo.hanio(1, "A", "B", "C"));
     }
 }

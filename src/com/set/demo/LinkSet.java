@@ -2,7 +2,7 @@ package com.set.demo;
 
 /**
  * Created by Hanson on 2017/6/7.
- *
+ * <p>
  * 链式集合
  */
 
@@ -116,9 +116,9 @@ public class LinkSet implements Set {
 
     @Override
     public boolean include(Set set) {
-        if (set.size()>size){
+        if (set.size() > size) {
             return false;
-        } else if (set.size() == 0){
+        } else if (set.size() == 0) {
             return true;
         } else {
             boolean bool = true;
@@ -176,8 +176,8 @@ public class LinkSet implements Set {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        for(int i=0; i<size; i++) {
-            if(i == size-1)
+        for (int i = 0; i < size; i++) {
+            if (i == size - 1)
                 sb.append(get(i));
             else
                 sb.append(get(i) + ", ");

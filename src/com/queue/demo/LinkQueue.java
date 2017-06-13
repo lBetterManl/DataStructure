@@ -76,9 +76,9 @@ public class LinkQueue implements Queue {
 
     @Override
     public String toString() {
-        StringBuilder sb= new StringBuilder("[");
+        StringBuilder sb = new StringBuilder("[");
         Node p = front;
-        while((p=p.next) != null) {
+        while ((p = p.next) != null) {
             sb.append(p.data + ", ");
         }
         sb.append("]");

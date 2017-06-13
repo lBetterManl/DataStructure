@@ -5,7 +5,7 @@ package com.list.demo;
  */
 
 /**
- * 链表结点
+ * 链表节点
  */
 class DlNode {
     Object data;

@@ -10,9 +10,15 @@ public class ArraySetTest {
         Set b = new ArraySet();
         Set c = new ArraySet();
         Set d = new ArraySet();
-        a.add(2); a.add(3); a.add(4); a.add(8);
-        b.add(3); b.add(4); b.add(5);
-        c.add(3); c.add(4);
+        a.add(2);
+        a.add(3);
+        a.add(4);
+        a.add(8);
+        b.add(3);
+        b.add(4);
+        b.add(5);
+        c.add(3);
+        c.add(4);
         System.out.println(a.size());
         System.out.println(b.size());
         System.out.println(a);
