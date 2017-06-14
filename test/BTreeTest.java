@@ -5,9 +5,9 @@ import com.binarytree.demo.Visit;
 /**
  * Created by hp on 2017/6/14.
  * <p>
- * A
+ *    A
  * B     C
- * D     E F
+ * D    E F
  */
 public class BTreeTest {
 

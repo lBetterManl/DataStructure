@@ -7,8 +7,8 @@ import com.tree.demo.Visit;
 public class TreeTest {
 
     /**
-     * A
-     * B      C      D
+     *          A
+     *   B      C      D
      * L  E    F     I  H
      * L
      *
