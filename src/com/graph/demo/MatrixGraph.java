@@ -152,7 +152,26 @@ public class MatrixGraph implements Graph {
 
     @Override
     public String deptFirst(Object o) {
-        return null;
+        Visit visit[] = new Visit[vertexs.size()];
+        for (int i = 0; i < vertexs.size(); i++) {
+            visit[i] = Visit.unvisited;
+        }
+        StringBuilder sb = new StringBuilder();
+        deptFirst(o, visit, sb);
+        return sb.toString();
+    }
+
+    private void deptFirst(Object o, Visit[] visit, StringBuilder sb){
+        int n = vertexs.indexOf(o);
+        sb.append(o + "\t");
+        visit[n] = Visit.visited;
+
+        Object v= this.getFirstVertex(o);
+        while (null != v) {
+            if (Visit.unvisited == visit[vertexs.indexOf(v)])
+                deptFirst(v, visit, sb);
+            v = this.getNextVertex(o, v);
+        }
     }
 
     @Override

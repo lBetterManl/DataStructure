@@ -164,7 +164,7 @@
 `Graph`图的接口  
 `Edge`边的定义  
 `MatrixEdge`邻接矩阵表示法-边的定义  
-`MatrixGraph`邻接矩阵表示法-图的定义  
+`MatrixGraphTest`邻接矩阵表示法-图的定义  
 
 
 
